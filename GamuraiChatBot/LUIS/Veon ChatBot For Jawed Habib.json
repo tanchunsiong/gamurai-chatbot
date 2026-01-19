@@ -1,0 +1,2910 @@
+{
+  "luis_schema_version": "1.3.0",
+  "name": "Veon ChatBot For Jawed Habib",
+  "desc": "Veon ChatBot For Jawed Habib",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "CancelBooking"
+    },
+    {
+      "name": "CheckBooking"
+    },
+    {
+      "name": "CheckConcessionPricing"
+    },
+    {
+      "name": "CheckContactInfo"
+    },
+    {
+      "name": "CheckPaymentMethod"
+    },
+    {
+      "name": "CheckProductPrice"
+    },
+    {
+      "name": "CheckPromotion"
+    },
+    {
+      "name": "CheckServicePrice"
+    },
+    {
+      "name": "CheckStaffNames"
+    },
+    {
+      "name": "Greetings"
+    },
+    {
+      "name": "Help"
+    },
+    {
+      "name": "MakeBooking"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "UpdateBooking"
+    }
+  ],
+  "entities": [
+    {
+      "name": "ContactInfo",
+      "children": [
+        "address",
+        "contact number",
+        "email",
+        "operating hours"
+      ]
+    },
+    {
+      "name": "CustomerType",
+      "children": [
+        "Concession",
+        "Member"
+      ]
+    },
+    {
+      "name": "DiscountType",
+      "children": [
+        "Permanent",
+        "Temporary"
+      ]
+    },
+    {
+      "name": "PaymentMethods"
+    },
+    {
+      "name": "Products",
+      "children": [
+        "HairProduct",
+        "BeautyProduct"
+      ]
+    },
+    {
+      "name": "Services",
+      "children": [
+        "BeauticianServices",
+        "HairstylistServices"
+      ]
+    },
+    {
+      "name": "Staff",
+      "children": [
+        "Beautician",
+        "Hairstylist"
+      ]
+    }
+  ],
+  "composites": [],
+  "bing_entities": [
+    "datetime",
+    "number"
+  ],
+  "actions": [
+    {
+      "actionName": "CheckPromotion",
+      "intentName": "CheckPromotion",
+      "actionParameters": [
+        {
+          "parameterName": "DiscountType",
+          "entityName": "DiscountType",
+          "required": false
+        }
+      ]
+    },
+    {
+      "actionName": "CheckConcessionPricing",
+      "intentName": "CheckConcessionPricing",
+      "actionParameters": [
+        {
+          "parameterName": "Concession",
+          "entityName": "CustomerType::Concession",
+          "required": false
+        }
+      ]
+    },
+    {
+      "actionName": "UpdateBooking",
+      "intentName": "UpdateBooking",
+      "actionParameters": [
+        {
+          "parameterName": "Date",
+          "entityName": "datetime",
+          "required": false
+        },
+        {
+          "parameterName": "number",
+          "entityName": "number",
+          "required": false
+        },
+        {
+          "parameterName": "Beautician",
+          "entityName": "Staff::Beautician",
+          "required": false
+        },
+        {
+          "parameterName": "Hairstylist",
+          "entityName": "Staff::Hairstylist",
+          "required": false
+        }
+      ]
+    },
+    {
+      "actionName": "CheckPaymentMethod",
+      "intentName": "CheckPaymentMethod",
+      "actionParameters": [
+        {
+          "parameterName": "PaymentMethods",
+          "entityName": "PaymentMethods",
+          "required": false
+        }
+      ]
+    },
+    {
+      "actionName": "CancelBooking",
+      "intentName": "CancelBooking",
+      "actionParameters": [
+        {
+          "parameterName": "number",
+          "entityName": "number",
+          "required": false
+        },
+        {
+          "parameterName": "Date",
+          "entityName": "datetime",
+          "required": false
+        }
+      ]
+    },
+    {
+      "actionName": "CheckProductPrice",
+      "intentName": "CheckProductPrice",
+      "actionParameters": [
+        {
+          "parameterName": "Products",
+          "entityName": "Products",
+          "required": false
+        }
+      ]
+    },
+    {
+      "actionName": "MakeBooking",
+      "intentName": "MakeBooking",
+      "actionParameters": [
+        {
+          "parameterName": "Beautician",
+          "entityName": "Staff::Beautician",
+          "required": false
+        },
+        {
+          "parameterName": "Hairstylist",
+          "entityName": "Staff::Hairstylist",
+          "required": false
+        },
+        {
+          "parameterName": "Date",
+          "entityName": "datetime",
+          "required": false
+        },
+        {
+          "parameterName": "number",
+          "entityName": "number",
+          "required": false
+        }
+      ]
+    },
+    {
+      "actionName": "CheckContactInfo",
+      "intentName": "CheckContactInfo",
+      "actionParameters": [
+        {
+          "parameterName": "ContactInfo",
+          "entityName": "ContactInfo",
+          "required": false
+        }
+      ]
+    },
+    {
+      "actionName": "CheckServicePrice",
+      "intentName": "CheckServicePrice",
+      "actionParameters": [
+        {
+          "parameterName": "BeauticianServices",
+          "entityName": "Services::BeauticianServices",
+          "required": false
+        },
+        {
+          "parameterName": "HairstylistServices",
+          "entityName": "Services::HairstylistServices",
+          "required": false
+        }
+      ]
+    },
+    {
+      "actionName": "Greetings",
+      "intentName": "Greetings",
+      "actionParameters": []
+    },
+    {
+      "actionName": "CheckBooking",
+      "intentName": "CheckBooking",
+      "actionParameters": [
+        {
+          "parameterName": "number",
+          "entityName": "number",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "model_features": [
+    {
+      "name": "BeauticianServicesWords",
+      "mode": false,
+      "words": "waxing,threading,manicure,pedicure,facial,makeup,brazilian waxing,whitening,body slimming,spa,detoxify facial,herbal facial,lotus facial,anti - ageing facial,whitening facial,make - up,gel polish,nail extension,bikini line",
+      "activated": true
+    },
+    {
+      "name": "HairstylistServicesWords",
+      "mode": false,
+      "words": "cut,color,perm,wash,haircut,rebond,treatment,styling,highlight,blow,extension,straighten,hair cut,high light,shoulder length cut,root treatment,brazilian blow dry,root touch up,digital perm,digital permining,korean magic perm,full coloring,hair treatment,permanent blow dry,scalp treatment,curling,setting,clamp,hair relaxer,straightening,brazilian straight,keratase treatment,keratase,cosmic perm,ultrasonic perm,smoothing digital perm,bleaching,student cut,color cleansing,hair contouring,strengthen and repair,anti dandruff,anti hairloss,oily scalp treatment,scalp massage,dry scalp treatment,sensitive scalp treament,anti - ageing scalp treament,scale detox treatment,curly hair,laying,slope,undercut,overlap,fringe,flattop,botak",
+      "activated": true
+    },
+    {
+      "name": "ContactWords",
+      "mode": false,
+      "words": "address,nearest MRT,nearest bus station,contact number,contact info,phone number,operating hours,how to get there,email address,number to call,number i can call,MRT station,bus stop,bus service,opening hours,closing hours",
+      "activated": true
+    },
+    {
+      "name": "ProductWords",
+      "mode": false,
+      "words": "hair wax,hair volumizer,wella,wellness,aveda,goldwell,redken,loreal,kinz,urban hair care,Ferveor,vital sassoon,toni and guy,paul mitchell,qod,shirowa,davines,fudge,msk,mondora,shiseido,nioxin,moroccanoil,treatment oil,schwarzkopf,pureology,tigi,origins,shampoo,conditioner,scalp lotion,hair tonic,styling spray,mousse,hair gel",
+      "activated": true
+    },
+    {
+      "name": "DiscountTypeWord",
+      "mode": false,
+      "words": "student pricing,student price,children cut,children price,senior citizen price,nsmen,national service,promotion,discount,seasonal discount,concession",
+      "activated": true
+    },
+    {
+      "name": "PaymentMethodWords",
+      "mode": true,
+      "words": "credit card,cheque,cash,nets,ezlink,ez - link,ez link,paywave,visa,mastercard,amex,american express,apply pay,samsung pay,paylah,bank transfer,enets,dash,alipay,bitcoin,debit card",
+      "activated": true
+    },
+    {
+      "name": "StylistNames",
+      "mode": true,
+      "words": "denise,Michelle",
+      "activated": true
+    },
+    {
+      "name": "BeauticianNames",
+      "mode": false,
+      "words": "Beta",
+      "activated": true
+    },
+    {
+      "name": "MakeBookingWords",
+      "mode": true,
+      "words": "schedule booking,make booking,make an appointment,schedule appointment,schedule a meeting,schedule a session,book a session,block a schedule,block time,block calendar,book a slot,schedule a slot",
+      "activated": true
+    }
+  ],
+  "regex_features": [
+    {
+      "name": "Singapore phone number",
+      "pattern": "^[3|6|9|8][0-9]{7}$",
+      "activated": true
+    }
+  ],
+  "utterances": [
+    {
+      "text": "does 5pm tomorrow work",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can i book an appointment with you today 3:00pm",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "i want to book an appointment for a haircut with denise, does 25th august work",
+      "intent": "MakeBooking",
+      "entities": [
+        {
+          "entity": "Services::HairstylistServices",
+          "startPos": 8,
+          "endPos": 8
+        },
+        {
+          "entity": "Staff::Hairstylist",
+          "startPos": 10,
+          "endPos": 10
+        }
+      ]
+    },
+    {
+      "text": "can i change my appointment?",
+      "intent": "UpdateBooking",
+      "entities": []
+    },
+    {
+      "text": "can i book an appointment with you tomorrow 3pm",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "how about tomorrow at 6pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can i make an appointment tomorrow",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "when is the earliest booking tomorrow?",
+      "intent": "CheckBooking",
+      "entities": []
+    },
+    {
+      "text": "can i book an appointment with michelle next monday 10am",
+      "intent": "MakeBooking",
+      "entities": [
+        {
+          "entity": "Staff::Hairstylist",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "what's the next earliest appointment",
+      "intent": "CheckBooking",
+      "entities": []
+    },
+    {
+      "text": "hi i want to book an appointment for a haircut with denise, does 5pm today work",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "can i pay by credit card?",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 4,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "do you accept visa?",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "do you accept nets?",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "do you accept cash?",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "do you accept mastercard?",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "do you accept voucher?",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "can pay by card?",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i need to cancel my booking",
+      "intent": "CancelBooking",
+      "entities": []
+    },
+    {
+      "text": "can i cancel my booking?",
+      "intent": "CancelBooking",
+      "entities": []
+    },
+    {
+      "text": "do you provide bikini line waxing",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Services::BeauticianServices",
+          "startPos": 3,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "do you provide digital perm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "do you provide manicure services",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Services::BeauticianServices",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "do you provide korean magic perm",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Services::HairstylistServices",
+          "startPos": 3,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "do you provide threading services",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Services::BeauticianServices",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "how about student cut",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "are you good at cutting curling hair",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Services::HairstylistServices",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "are you good at curly hair",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can i make a booking",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "i want to cancel my booking",
+      "intent": "CancelBooking",
+      "entities": []
+    },
+    {
+      "text": "how much does it cost to do a digital perm?",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Services::HairstylistServices",
+          "startPos": 8,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "how much does it cost to do bikini waxing",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Services::BeauticianServices",
+          "startPos": 7,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "how much do you charge for a haircut",
+      "intent": "CheckServicePrice",
+      "entities": []
+    },
+    {
+      "text": "may i know the price for women's haircut?",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Services::HairstylistServices",
+          "startPos": 9,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "wanted to know the cost medium layers cut which suits my face and straightening as well",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Services::HairstylistServices",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "Services::HairstylistServices",
+          "startPos": 13,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "is there student discount?",
+      "intent": "CheckConcessionPricing",
+      "entities": [
+        {
+          "entity": "CustomerType::Concession",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "do you blow curls after washing",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Services::HairstylistServices",
+          "startPos": 2,
+          "endPos": 3
+        },
+        {
+          "entity": "Services::HairstylistServices",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "may i know your address?",
+      "intent": "CheckContactInfo",
+      "entities": [
+        {
+          "entity": "ContactInfo",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "what is your operating hours",
+      "intent": "CheckContactInfo",
+      "entities": []
+    },
+    {
+      "text": "whats the nearest mrt station",
+      "intent": "CheckContactInfo",
+      "entities": []
+    },
+    {
+      "text": "do you have an email address?",
+      "intent": "CheckContactInfo",
+      "entities": [
+        {
+          "entity": "ContactInfo::email",
+          "startPos": 4,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "what is your operating hours?",
+      "intent": "CheckContactInfo",
+      "entities": [
+        {
+          "entity": "ContactInfo::operating hours",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "what are your charges like?",
+      "intent": "CheckServicePrice",
+      "entities": []
+    },
+    {
+      "text": "got promotion or not?",
+      "intent": "CheckPromotion",
+      "entities": [
+        {
+          "entity": "DiscountType",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "how much do you charge for hair color and root touchup",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Services::HairstylistServices",
+          "startPos": 6,
+          "endPos": 7
+        },
+        {
+          "entity": "Services::HairstylistServices",
+          "startPos": 9,
+          "endPos": 10
+        }
+      ]
+    },
+    {
+      "text": "are you open on sunday?",
+      "intent": "CheckContactInfo",
+      "entities": []
+    },
+    {
+      "text": "is there a number i can call?",
+      "intent": "CheckContactInfo",
+      "entities": [
+        {
+          "entity": "ContactInfo::contact number",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "whats your address?",
+      "intent": "CheckContactInfo",
+      "entities": [
+        {
+          "entity": "ContactInfo",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "do you have any other branches?",
+      "intent": "CheckContactInfo",
+      "entities": []
+    },
+    {
+      "text": "are you open on public holiday?",
+      "intent": "CheckContactInfo",
+      "entities": [
+        {
+          "entity": "ContactInfo::operating hours",
+          "startPos": 4,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "what time do you open?",
+      "intent": "CheckContactInfo",
+      "entities": []
+    },
+    {
+      "text": "how to get to your place?",
+      "intent": "CheckContactInfo",
+      "entities": []
+    },
+    {
+      "text": "which mrt station is the nearest?",
+      "intent": "CheckContactInfo",
+      "entities": [
+        {
+          "entity": "ContactInfo",
+          "startPos": 1,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "what bus should i take?",
+      "intent": "CheckContactInfo",
+      "entities": []
+    },
+    {
+      "text": "how much for xxxx shampoo?",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Products",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "how much does paul mitchell shampoo cost?",
+      "intent": "CheckProductPrice",
+      "entities": [
+        {
+          "entity": "Products",
+          "startPos": 3,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "how much does wella shampoo cost?",
+      "intent": "CheckProductPrice",
+      "entities": [
+        {
+          "entity": "Products",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "how much for hair wax",
+      "intent": "CheckProductPrice",
+      "entities": [
+        {
+          "entity": "Products",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "how much for shiseido hair styling spray?",
+      "intent": "CheckProductPrice",
+      "entities": [
+        {
+          "entity": "Products",
+          "startPos": 5,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "how much for aveda shampoo?",
+      "intent": "CheckProductPrice",
+      "entities": [
+        {
+          "entity": "Products",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "is denis available tomorrow?",
+      "intent": "CheckBooking",
+      "entities": []
+    },
+    {
+      "text": "is denis working today?",
+      "intent": "CheckBooking",
+      "entities": []
+    },
+    {
+      "text": "do you have student discount?",
+      "intent": "CheckConcessionPricing",
+      "entities": [
+        {
+          "entity": "CustomerType::Concession",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "got special price for students?",
+      "intent": "CheckConcessionPricing",
+      "entities": []
+    },
+    {
+      "text": "got student pricing?",
+      "intent": "CheckConcessionPricing",
+      "entities": []
+    },
+    {
+      "text": "is there children pricing?",
+      "intent": "CheckPromotion",
+      "entities": [
+        {
+          "entity": "CustomerType::Concession",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "is there a promotion going on?",
+      "intent": "CheckPromotion",
+      "entities": [
+        {
+          "entity": "DiscountType",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "is there promotion for national service?",
+      "intent": "CheckConcessionPricing",
+      "entities": [
+        {
+          "entity": "CustomerType::Concession",
+          "startPos": 4,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "how much does a children cut cost?",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Services::HairstylistServices",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "is there concession price?",
+      "intent": "CheckConcessionPricing",
+      "entities": [
+        {
+          "entity": "CustomerType::Concession",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "do you carry aveda shampoo?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "do you sell aveda shampoo?",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Products",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "do you have stock for paul mitchell shampoo",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Products",
+          "startPos": 5,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "do you carry nioxin shampoo?",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Products",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "how much is nioxin shampoo?",
+      "intent": "CheckProductPrice",
+      "entities": [
+        {
+          "entity": "Products",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "do you carry moroccanoil conditioner",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Products",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "how much moroccanoil cost?",
+      "intent": "CheckProductPrice",
+      "entities": [
+        {
+          "entity": "Products",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "do you do rebonding services?",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Services::HairstylistServices",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "do you do straightening?",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Services::HairstylistServices",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "do you take amex?",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "do you take american express?",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "do you take apple pay",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "do you take samsung pay?",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "do you take cashcard?",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "do you accept paywave?",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "do you accept ezlink?",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "do you accept bitcoins?",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what time do you close?",
+      "intent": "CheckContactInfo",
+      "entities": []
+    },
+    {
+      "text": "got free gift or not?",
+      "intent": "CheckPromotion",
+      "entities": []
+    },
+    {
+      "text": "can cheaper?",
+      "intent": "CheckPromotion",
+      "entities": []
+    },
+    {
+      "text": "can you check what time is my appointment?",
+      "intent": "CheckBooking",
+      "entities": []
+    },
+    {
+      "text": "what's my existing appointment time with denise?",
+      "intent": "CheckBooking",
+      "entities": []
+    },
+    {
+      "text": "is denise free today to do a digital perm?",
+      "intent": "CheckBooking",
+      "entities": [
+        {
+          "entity": "Services::HairstylistServices",
+          "startPos": 7,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "is denise available in the morning?",
+      "intent": "CheckBooking",
+      "entities": []
+    },
+    {
+      "text": "is denise back from leave?",
+      "intent": "CheckBooking",
+      "entities": []
+    },
+    {
+      "text": "would you be able to help me schedule an appointment with denise?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "how is denise's timetable tomorrow?",
+      "intent": "CheckBooking",
+      "entities": []
+    },
+    {
+      "text": "is denise's schedule available tomorrow?",
+      "intent": "CheckBooking",
+      "entities": [
+        {
+          "entity": "Staff::Hairstylist",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "is denise available tomorrow?",
+      "intent": "CheckBooking",
+      "entities": [
+        {
+          "entity": "Staff::Hairstylist",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "is denise available today>",
+      "intent": "CheckBooking",
+      "entities": [
+        {
+          "entity": "Staff::Hairstylist",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "can i schedule an appointment with denise today?",
+      "intent": "MakeBooking",
+      "entities": [
+        {
+          "entity": "Staff::Hairstylist",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "is denise available today?",
+      "intent": "CheckBooking",
+      "entities": []
+    },
+    {
+      "text": "would you be able to squeeze an appointment in for today?",
+      "intent": "CheckBooking",
+      "entities": []
+    },
+    {
+      "text": "is there a slot today?",
+      "intent": "CheckBooking",
+      "entities": []
+    },
+    {
+      "text": "is there a slot tomorrow?",
+      "intent": "CheckBooking",
+      "entities": []
+    },
+    {
+      "text": "can i book appointment tomorrow 3pm?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "can i change my appointment to tomorrow same timing?",
+      "intent": "UpdateBooking",
+      "entities": []
+    },
+    {
+      "text": "can you change my appointment to next week?",
+      "intent": "UpdateBooking",
+      "entities": []
+    },
+    {
+      "text": "is there an earlier date for my appointment?",
+      "intent": "UpdateBooking",
+      "entities": []
+    },
+    {
+      "text": "can you reschedule my appointment to an earlier timing?",
+      "intent": "UpdateBooking",
+      "entities": []
+    },
+    {
+      "text": "can you reschedule my appointment a later timing?",
+      "intent": "UpdateBooking",
+      "entities": []
+    },
+    {
+      "text": "i can't make it for my appointment today, can you cancel it?",
+      "intent": "CancelBooking",
+      "entities": []
+    },
+    {
+      "text": "i need to cancel my appointment",
+      "intent": "CancelBooking",
+      "entities": []
+    },
+    {
+      "text": "i can't make it for my appointment today, can i reschedule?",
+      "intent": "UpdateBooking",
+      "entities": []
+    },
+    {
+      "text": "please help me cancel my booking",
+      "intent": "CancelBooking",
+      "entities": []
+    },
+    {
+      "text": "i can't make it for my appointment next week, please help me cancel it",
+      "intent": "CancelBooking",
+      "entities": []
+    },
+    {
+      "text": "something last minute cropped up, please cancel my booking",
+      "intent": "CancelBooking",
+      "entities": []
+    },
+    {
+      "text": "i can't make it today for my appointment, please cancel it",
+      "intent": "CancelBooking",
+      "entities": []
+    },
+    {
+      "text": "i need to cancel my appointment tomorrow",
+      "intent": "CancelBooking",
+      "entities": []
+    },
+    {
+      "text": "i can't make it today, can you cancel my booking?",
+      "intent": "CancelBooking",
+      "entities": []
+    },
+    {
+      "text": "i can't make it for my appointment, can you cancel it?",
+      "intent": "CancelBooking",
+      "entities": []
+    },
+    {
+      "text": "what is the price for korean perm?",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Services::HairstylistServices",
+          "startPos": 5,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "what is the price for korean cut?",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Services::HairstylistServices",
+          "startPos": 5,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "can i pay by cash?",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "can i pay by cash",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "can i pay by apple pay?",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 4,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "can i pay by samsung pay?",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 4,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "can i pay by visa?",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "can i pay by mastercard?",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "can i pay ezlink?",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "can i pay by paywave?",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "can i make a booking tomorrow with denise at 6 pm",
+      "intent": "MakeBooking",
+      "entities": [
+        {
+          "entity": "Staff::Hairstylist",
+          "startPos": 7,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "can i make payment by nets?",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "can i make payment by credit card",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 5,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "hi",
+      "intent": "Greetings",
+      "entities": []
+    },
+    {
+      "text": "what's your address?",
+      "intent": "CheckContactInfo",
+      "entities": [
+        {
+          "entity": "ContactInfo::address",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "i want to make a booking",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "can i make a booking?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "tomorrow 3pm can",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "tomorrow 3 pm got slot or not?",
+      "intent": "CheckBooking",
+      "entities": []
+    },
+    {
+      "text": "servicetofind",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "string strservicetofind",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "is denise available tomorrow at 4pm?",
+      "intent": "CheckBooking",
+      "entities": []
+    },
+    {
+      "text": "what is the price for digital perm?",
+      "intent": "CheckServicePrice",
+      "entities": []
+    },
+    {
+      "text": "huh?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "do you have a contact number?",
+      "intent": "CheckContactInfo",
+      "entities": [
+        {
+          "entity": "ContactInfo",
+          "startPos": 4,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "what are your operating hours?",
+      "intent": "CheckContactInfo",
+      "entities": [
+        {
+          "entity": "ContactInfo",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "what is your address?",
+      "intent": "CheckContactInfo",
+      "entities": [
+        {
+          "entity": "ContactInfo",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "can i pay by nets?",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "denise",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Staff::Hairstylist",
+          "startPos": 0,
+          "endPos": 0
+        }
+      ]
+    },
+    {
+      "text": "what can you do?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "what are the features you can perform?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "help",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "good afternoon",
+      "intent": "Greetings",
+      "entities": []
+    },
+    {
+      "text": "good evening",
+      "intent": "Greetings",
+      "entities": []
+    },
+    {
+      "text": "hello",
+      "intent": "Greetings",
+      "entities": []
+    },
+    {
+      "text": "how are you?",
+      "intent": "Greetings",
+      "entities": []
+    },
+    {
+      "text": "hi there",
+      "intent": "Greetings",
+      "entities": []
+    },
+    {
+      "text": "hello!",
+      "intent": "Greetings",
+      "entities": []
+    },
+    {
+      "text": "good day!",
+      "intent": "Greetings",
+      "entities": []
+    },
+    {
+      "text": "how are you doing today?",
+      "intent": "Greetings",
+      "entities": []
+    },
+    {
+      "text": "how is it going?",
+      "intent": "Greetings",
+      "entities": []
+    },
+    {
+      "text": "oh hai",
+      "intent": "Greetings",
+      "entities": []
+    },
+    {
+      "text": "how about next week?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can i make a booking tomorrow afternoon?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "can i reschedule my meeting to the evening?",
+      "intent": "UpdateBooking",
+      "entities": []
+    },
+    {
+      "text": "can i make a booking at noon?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "i want to make a booking tomorrow at 4pm with denise",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "i want to schedule an appointment",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "can i fix an appointment?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "can i block a session?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "i would like to make a booking tomorrow morning",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "hello are you a bot?",
+      "intent": "Greetings",
+      "entities": []
+    },
+    {
+      "text": "good morning",
+      "intent": "Greetings",
+      "entities": []
+    },
+    {
+      "text": "can i make a booking on the week of september?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "i want to make a booking tomorrow at 5pm",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "can i schedule a booking with denise tomorrow?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "can i make a booking tomorrow morning?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "how about tomorrow?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "next week?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can i make a booking on monday",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "how about last week?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can i make it week of september 30th 2016",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can i make it week of september 30th?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "5pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can i make a booking next week?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "do you have something in the morning?",
+      "intent": "CheckBooking",
+      "entities": []
+    },
+    {
+      "text": "how much for aveda conditioner?",
+      "intent": "CheckProductPrice",
+      "entities": [
+        {
+          "entity": "Products",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "let's do 4pm instead",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how about 2 weeks ago?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "tomorrow morning?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when is the next earliest booking?",
+      "intent": "CheckBooking",
+      "entities": []
+    },
+    {
+      "text": "how about 1st week of january?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how about 1st week of jan?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how about tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can i make an appointment tomorrow morning?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "can i make a booking with denise tomorrow afternoon?",
+      "intent": "MakeBooking",
+      "entities": [
+        {
+          "entity": "Staff::Hairstylist",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "can i make a booking tomorrow?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "can i make a booking at 4pm?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "can i booking a timing at 4pm today with denise?",
+      "intent": "MakeBooking",
+      "entities": [
+        {
+          "entity": "Staff::Hairstylist",
+          "startPos": 9,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "what functionalities or feature are you capable of?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "what are some of the things i can do?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "what are some of the things you can perform?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "what are some of the functionalities you can do?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "i need some help",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "i need some assistance",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "can you list down the functionalities or feature you can perform?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "evening",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "either afternoon, 3pm or 1600hrs",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "anytime from 2-5pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can i make a booking today afternoon?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "week of september",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can i make a booking today?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "botdata.getproperty<booking>(staticenum.currentmakebookingobj);",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i would like to have an appointment tomorrow noon",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "how about tomorrow morning?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can i make a booking with denise in the week of september?",
+      "intent": "MakeBooking",
+      "entities": [
+        {
+          "entity": "Staff::Hairstylist",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "how about tomorrow morning or 4pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i would like to have an appointment tomorrow night",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "i would like to have an appointment tomorrow nigh",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "can i make a booking with denise in the 2nd week of september?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "i would like to have an appointment tomorrow in the afternoon",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "i would like to have an appointment tomorrow dusk",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "can i make an appointment how about tomorrow morning?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "i would like to have an appointment tomorrow night or monday 4pm?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "i can't make it today, can i cancel my booking?",
+      "intent": "CancelBooking",
+      "entities": []
+    },
+    {
+      "text": "can i block a timing with denise?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "can i block denise's time?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "can i block a timing tomorrow?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "can i block denise calender tomorrow?",
+      "intent": "MakeBooking",
+      "entities": [
+        {
+          "entity": "Staff::Hairstylist",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "can i schedule time with denise later this week?",
+      "intent": "MakeBooking",
+      "entities": [
+        {
+          "entity": "Staff::Hairstylist",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "is denise available tomorrow at 4pm for a session?",
+      "intent": "CheckBooking",
+      "entities": []
+    },
+    {
+      "text": "i would like to schedule a session with denise tomorrow 5pm",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "can i block timing tomorrow?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "can i block a slot today?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "can i change my booking?",
+      "intent": "UpdateBooking",
+      "entities": []
+    },
+    {
+      "text": "i can't make it for this week's appointment, can i cancel it?",
+      "intent": "CancelBooking",
+      "entities": []
+    },
+    {
+      "text": "i can't make it for my appointment, can i reschedule?",
+      "intent": "UpdateBooking",
+      "entities": []
+    },
+    {
+      "text": "i need to push back my appointment to a later timing",
+      "intent": "UpdateBooking",
+      "entities": []
+    },
+    {
+      "text": "i need to push back my appointment to a later date",
+      "intent": "UpdateBooking",
+      "entities": []
+    },
+    {
+      "text": "i can't make it for my appointment, i need to push it to another date",
+      "intent": "UpdateBooking",
+      "entities": []
+    },
+    {
+      "text": "hi how are you?",
+      "intent": "Greetings",
+      "entities": []
+    },
+    {
+      "text": "hello hi",
+      "intent": "Greetings",
+      "entities": []
+    },
+    {
+      "text": "hai",
+      "intent": "Greetings",
+      "entities": []
+    },
+    {
+      "text": "oh hi",
+      "intent": "Greetings",
+      "entities": []
+    },
+    {
+      "text": "is there senior citizen pricing?",
+      "intent": "CheckConcessionPricing",
+      "entities": [
+        {
+          "entity": "CustomerType::Concession",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "is there discount for nsf?",
+      "intent": "CheckConcessionPricing",
+      "entities": [
+        {
+          "entity": "CustomerType::Concession",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "is there concession pricing for national servicemen?",
+      "intent": "CheckConcessionPricing",
+      "entities": [
+        {
+          "entity": "CustomerType::Concession",
+          "startPos": 5,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "is there package deal?",
+      "intent": "CheckPromotion",
+      "entities": []
+    },
+    {
+      "text": "do you offer spa packages?",
+      "intent": "CheckPromotion",
+      "entities": []
+    },
+    {
+      "text": "is there discount for child?",
+      "intent": "CheckConcessionPricing",
+      "entities": [
+        {
+          "entity": "CustomerType::Concession",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "is there discount for elderly?",
+      "intent": "CheckConcessionPricing",
+      "entities": [
+        {
+          "entity": "CustomerType::Concession",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "is there discount for student pass holder?",
+      "intent": "CheckConcessionPricing",
+      "entities": [
+        {
+          "entity": "CustomerType::Concession",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "is there discount for polytechnic student?",
+      "intent": "CheckConcessionPricing",
+      "entities": [
+        {
+          "entity": "CustomerType::Concession",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "is there discount for university student?",
+      "intent": "CheckConcessionPricing",
+      "entities": [
+        {
+          "entity": "CustomerType::Concession",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "is there discount for disabled individuals?",
+      "intent": "CheckConcessionPricing",
+      "entities": [
+        {
+          "entity": "CustomerType::Concession",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "is there discount for affliated individuals?",
+      "intent": "CheckConcessionPricing",
+      "entities": [
+        {
+          "entity": "CustomerType::Concession",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "do you have discount for regular customers?",
+      "intent": "CheckConcessionPricing",
+      "entities": []
+    },
+    {
+      "text": "is there discount for csc holders?",
+      "intent": "CheckConcessionPricing",
+      "entities": [
+        {
+          "entity": "CustomerType::Concession",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "public servant",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "CustomerType::Concession",
+          "startPos": 0,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "is there discount for scdf",
+      "intent": "CheckConcessionPricing",
+      "entities": [
+        {
+          "entity": "CustomerType::Concession",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "hi i want to make a booking tomorrow",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "do you have list of your beauticians?",
+      "intent": "CheckStaffNames",
+      "entities": []
+    },
+    {
+      "text": "do you have a list of hairstylist?",
+      "intent": "CheckStaffNames",
+      "entities": []
+    },
+    {
+      "text": "can you recommend a stylist?",
+      "intent": "CheckStaffNames",
+      "entities": []
+    },
+    {
+      "text": "can you recommend a beautician?",
+      "intent": "CheckStaffNames",
+      "entities": []
+    },
+    {
+      "text": "can you recommend someone?",
+      "intent": "CheckStaffNames",
+      "entities": []
+    },
+    {
+      "text": "who is available?",
+      "intent": "CheckStaffNames",
+      "entities": []
+    },
+    {
+      "text": "do you have a list of names?",
+      "intent": "CheckStaffNames",
+      "entities": []
+    },
+    {
+      "text": "do you have a list of staff?",
+      "intent": "CheckStaffNames",
+      "entities": []
+    },
+    {
+      "text": "can i check the price of shampoo?",
+      "intent": "CheckProductPrice",
+      "entities": [
+        {
+          "entity": "Products",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "can i check the pricing of hair wax?",
+      "intent": "CheckProductPrice",
+      "entities": [
+        {
+          "entity": "Products",
+          "startPos": 6,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "can i check the price of hair tonic",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Products",
+          "startPos": 6,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "how much does hair tonic cost?",
+      "intent": "CheckProductPrice",
+      "entities": [
+        {
+          "entity": "Products",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "how much does treatment oil cost?",
+      "intent": "CheckProductPrice",
+      "entities": [
+        {
+          "entity": "Products",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "how much for nioxin shampoo?",
+      "intent": "CheckProductPrice",
+      "entities": [
+        {
+          "entity": "Products",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "how much for hair spray?",
+      "intent": "CheckProductPrice",
+      "entities": [
+        {
+          "entity": "Products",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "how much for scalp lotion?",
+      "intent": "CheckProductPrice",
+      "entities": [
+        {
+          "entity": "Products",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "how much for volumnizer?",
+      "intent": "CheckProductPrice",
+      "entities": [
+        {
+          "entity": "Products",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "how much for hot oil?",
+      "intent": "CheckProductPrice",
+      "entities": [
+        {
+          "entity": "Products",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "how much for styling spray?",
+      "intent": "CheckProductPrice",
+      "entities": [
+        {
+          "entity": "Products",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "how much for mousse?",
+      "intent": "CheckProductPrice",
+      "entities": [
+        {
+          "entity": "Products",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "how much for digital perm?",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Services::HairstylistServices",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "how much for cut?",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Services::HairstylistServices",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "how much for haircut?",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Services::HairstylistServices",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "how much for straightening?",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Services::HairstylistServices",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "how much for facial?",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Services::BeauticianServices",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "how much for root touchup?",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Services::HairstylistServices",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "how much for blow dry?",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Services::HairstylistServices",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "how much for keratase treament?",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Services::HairstylistServices",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "how much for highlight?",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Services::HairstylistServices",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "how much for scalp treatment?",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Services::HairstylistServices",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "how much for ultrasonic perm?",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Services::HairstylistServices",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "how much for waxing?",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Services::BeauticianServices",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "how much does body slimming spa cost?",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Services::BeauticianServices",
+          "startPos": 3,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "how much for manicure?",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Services::BeauticianServices",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "how much for whitening facial?",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Services::BeauticianServices",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "how much for threading?",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Services::BeauticianServices",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "how much for waxing and threading?",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Services::BeauticianServices",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "Services::BeauticianServices",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "how much for pedicure?",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Services::BeauticianServices",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "how much for herbal facial?",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Services::BeauticianServices",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "can i check my booking?",
+      "intent": "CheckBooking",
+      "entities": []
+    },
+    {
+      "text": "can i check my existing appointment?",
+      "intent": "CheckBooking",
+      "entities": []
+    },
+    {
+      "text": "do i have an existing appointment?",
+      "intent": "CheckBooking",
+      "entities": []
+    },
+    {
+      "text": "whats my appointment?",
+      "intent": "UpdateBooking",
+      "entities": []
+    },
+    {
+      "text": "whats' my current appointment?",
+      "intent": "CheckBooking",
+      "entities": []
+    },
+    {
+      "text": "whats my booking?",
+      "intent": "CheckBooking",
+      "entities": []
+    },
+    {
+      "text": "do you have member pricing",
+      "intent": "CheckConcessionPricing",
+      "entities": []
+    },
+    {
+      "text": "do you have aveda shampoo?",
+      "intent": "CheckProductPrice",
+      "entities": [
+        {
+          "entity": "Products::HairProduct",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "do you have loreal shampoo",
+      "intent": "CheckServicePrice",
+      "entities": [
+        {
+          "entity": "Products::HairProduct",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "can i make an appointment with denise tomorrow?",
+      "intent": "MakeBooking",
+      "entities": [
+        {
+          "entity": "Staff::Hairstylist",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "can i make an appointment with michelle tomorrow?",
+      "intent": "MakeBooking",
+      "entities": [
+        {
+          "entity": "Staff::Hairstylist",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "is there an appointment later today?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "whats your contact number?",
+      "intent": "CheckContactInfo",
+      "entities": [
+        {
+          "entity": "ContactInfo::contact number",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what time are your operating hours?",
+      "intent": "CheckContactInfo",
+      "entities": [
+        {
+          "entity": "ContactInfo::operating hours",
+          "startPos": 4,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "what is your opening time?",
+      "intent": "CheckContactInfo",
+      "entities": [
+        {
+          "entity": "ContactInfo::operating hours",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "what is your closing time?",
+      "intent": "CheckContactInfo",
+      "entities": [
+        {
+          "entity": "ContactInfo::operating hours",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "do i need an appointment for hair cutting?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "i can't get thru your line. can i get an appointment for hair cut tomorrow that is on 12th august friday?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "i don't have any preferred one",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "12pm 93723129 thanks",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "tomorrow morning can i get an appointment for haircut?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "but i don't think i can come later, maybe on friday. anyway i will call tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i can't make it for tomorrows appointment",
+      "intent": "CancelBooking",
+      "entities": []
+    },
+    {
+      "text": "i won't be able to make it for appointment today",
+      "intent": "CancelBooking",
+      "entities": []
+    },
+    {
+      "text": "do you accept samsung pay",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "do you accept apple pay?",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "do you accept alipay?",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "sure",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can i come over later?",
+      "intent": "MakeBooking",
+      "entities": []
+    },
+    {
+      "text": "yesterday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "do you accept cash",
+      "intent": "CheckPaymentMethod",
+      "entities": [
+        {
+          "entity": "PaymentMethods",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "g",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can i make a booking tomorrow morning with denise?",
+      "intent": "MakeBooking",
+      "entities": [
+        {
+          "entity": "Staff::Hairstylist",
+          "startPos": 8,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "can i update my appointment",
+      "intent": "UpdateBooking",
+      "entities": []
+    },
+    {
+      "text": "can i update my booking?",
+      "intent": "UpdateBooking",
+      "entities": []
+    },
+    {
+      "text": "can i change my booking date?",
+      "intent": "UpdateBooking",
+      "entities": []
+    },
+    {
+      "text": "can i change my booking timing?",
+      "intent": "UpdateBooking",
+      "entities": []
+    }
+  ]
+}
